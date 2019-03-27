@@ -23,7 +23,7 @@
     
     <div class="pagination">
       <button *ngIf="people.previous !== null" type="button" class="btn btn-outline-dark pull-right" (click)="handleclick('back')">previous</button>
-      <button type="button" class="btn btn-default">{{currentPage}}</button>
+      <div class="currentPage">{{currentPage}}</div>
       <button *ngIf="people.next !== null" type="button" class="btn btn-outline-dark pull-left" (click)="handleclick('forward')">next</button>
     </div>
 </div>

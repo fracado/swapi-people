@@ -12,6 +12,16 @@ export class PeopleComponent implements OnInit {
 
   constructor(private peopleService: PeopleService) { }
 
+  handleclick = direction => {
+    if (direction === "forward") {
+        this.currentPage = this.currentPage + 1;
+        this.getPeople();
+    } else {
+        this.currentPage--;
+        this.getPeople();
+    }
+  };
+
   getPeople() {
     this.peopleService.getPeople(this.currentPage).subscribe((data: {}) => {
       console.log(data);
