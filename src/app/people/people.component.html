@@ -1,20 +1,29 @@
-<h2>Star Wars People List</h2>
-
-<table class="table table-borderless">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Name</th>
-      <th scope="col">Year of Birth</th>
-      <th scope="col">Gender</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let people of people.results; index as i">
-      <th scope="row"></th>
-      <td>{{ people.name }}</td>
-      <td>{{ people.birth_year }}</td>
-      <td>{{ people.gender }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="people-container">
+    <div class="h3">Star Wars People</div>
+    <div class="table-responsive">
+    <table class="table table-sm">
+      <thead>
+        <tr class="table-columns">
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Year of Birth</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let people of people.results; index as i">
+          <th scope="row"></th>
+          <td>{{ people.name }}</td>
+          <td>{{ people.birth_year }}</td>
+          <td>{{ people.gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <div class="pagination">
+      <button *ngIf="people.previous !== null" type="button" class="btn btn-outline-dark pull-right" (click)="handleclick('back')">previous</button>
+      <button type="button" class="btn btn-default">{{currentPage}}</button>
+      <button *ngIf="people.next !== null" type="button" class="btn btn-outline-dark pull-left" (click)="handleclick('forward')">next</button>
+    </div>
+</div>
