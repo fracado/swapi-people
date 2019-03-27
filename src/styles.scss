@@ -1,1 +1,30 @@
+* {
+  font-family: Impact, sans-serif;
+}
 
+.h3 {
+  padding: 20px;
+  text-shadow: rgb(151, 136, 76) 1px 0 10px;
+}
+
+.people-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.table-responsive {
+  background-color: rgba(129, 120, 99, 0.425);
+  border-radius: 30px;
+  max-width: 60%;
+}
+
+td {
+  padding: 10px;
+}
+
+.pagination {
+  padding: 20px;
+}
