@@ -1,5 +1,6 @@
-* {
+html {
   font-family: Impact, sans-serif;
+  background-image: url('assets/background.jpg');
 }
 
 .h3 {
@@ -8,6 +9,7 @@
 }
 
 .people-container {
+  background-image: url('assets/background.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +18,7 @@
 }
 
 .table-responsive {
-  background-color: rgba(129, 120, 99, 0.425);
+  background-color: rgba(131, 128, 121, 0.603);
   border-radius: 30px;
   max-width: 60%;
 }
