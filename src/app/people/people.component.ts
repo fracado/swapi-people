@@ -7,12 +7,13 @@ import { PeopleService } from "../people.service";
   styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
-  people: any = {};
+  people: any = null;
   currentPage: number = 1;
 
   constructor(private peopleService: PeopleService) { }
 
   handleclick = direction => {
+    this.people = null;
     if (direction === "forward") {
         this.currentPage = this.currentPage + 1;
         this.getPeople();

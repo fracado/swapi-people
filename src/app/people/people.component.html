@@ -1,11 +1,12 @@
 <div class="people-container">
     <div class="h3">Star Wars People</div>
-    <div class="table-responsive">
+    <div class="table-responsive" *ngIf="people !== null; else loading">
     <table class="table table-sm">
       <thead>
         <tr class="table-columns">
           <th scope="col"></th>
           <th scope="col">Name</th>
+          <th scope="col">Height</th>
           <th scope="col">Year of Birth</th>
           <th scope="col">Gender</th>
         </tr>
@@ -14,6 +15,7 @@
         <tr *ngFor="let people of people.results; index as i">
           <th scope="row"></th>
           <td>{{ people.name }}</td>
+          <td>{{ people.height }}</td>
           <td>{{ people.birth_year }}</td>
           <td>{{ people.gender }}</td>
         </tr>
@@ -27,3 +29,7 @@
       <button *ngIf="people.next !== null" type="button" class="btn btn-outline-dark pull-left" (click)="handleclick('forward')">next</button>
     </div>
 </div>
+
+<ng-template #loading>
+    <div>Loading...</div>
+</ng-template>
